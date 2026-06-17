@@ -17,7 +17,7 @@
     <header id="header">
       <div id="header-left">
         <div id="header-title">NASDAQ-100 Screener</div>
-        <div id="header-sub">15-min delayed · Technical signals</div>
+        <div id="header-sub">15-min delayed · Technical + Fundamental</div>
       </div>
       <div id="header-right">
         <div id="header-count">—</div>
@@ -33,9 +33,7 @@
         <button class="sig-tab" data-sig="SELL">Sell</button>
       </div>
       <div id="filter-controls">
-        <select id="sector-filter">
-          <option value="">All Sectors</option>
-        </select>
+        <select id="sector-filter"><option value="">All Sectors</option></select>
         <select id="sort-select">
           <option value="score">Score</option>
           <option value="rsi_asc">RSI ↑</option>
@@ -50,26 +48,22 @@
 
     <nav id="nav">
       <button class="nav-btn active" data-view="screener">Screener</button>
+      <button class="nav-btn" data-view="heatmap">Sectors</button>
       <button class="nav-btn" data-view="watchlist">Watchlist</button>
     </nav>
 
     <main id="view-container">
-      <div id="screener-view">
-        <div id="stock-list"></div>
-      </div>
-      <div id="watchlist-view" class="hidden">
-        <div id="watchlist-list"></div>
-      </div>
+      <div id="screener-view"><div id="stock-list"></div></div>
+      <div id="heatmap-view" class="hidden"><div id="heatmap-grid"></div></div>
+      <div id="watchlist-view" class="hidden"><div id="watchlist-list"></div></div>
     </main>
   </div>
 
-  <!-- Detail bottom sheet -->
   <div id="sheet-backdrop" class="hidden"></div>
   <div id="detail-sheet" class="hidden">
     <div id="sheet-handle-wrap"><div id="sheet-handle"></div></div>
     <div id="sheet-content"></div>
   </div>
-
   <div id="toast"></div>
 
   <script src="data.js"></script>
