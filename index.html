@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0f1e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="NASDAQ Screener">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <title>NASDAQ-100 Screener</title>
+</head>
+<body>
+  <div id="app">
+    <header id="header">
+      <div id="header-left">
+        <div id="header-title">NASDAQ-100 Screener</div>
+        <div id="header-sub">15-min delayed · Technical signals</div>
+      </div>
+      <div id="header-right">
+        <div id="header-count">—</div>
+        <div id="header-updated">—</div>
+      </div>
+    </header>
+
+    <div id="filter-bar">
+      <div id="signal-tabs">
+        <button class="sig-tab active" data-sig="ALL">All</button>
+        <button class="sig-tab" data-sig="BUY">Buy</button>
+        <button class="sig-tab" data-sig="HOLD">Hold</button>
+        <button class="sig-tab" data-sig="SELL">Sell</button>
+      </div>
+      <div id="filter-controls">
+        <select id="sector-filter">
+          <option value="">All Sectors</option>
+        </select>
+        <select id="sort-select">
+          <option value="score">Score</option>
+          <option value="rsi_asc">RSI ↑</option>
+          <option value="rsi_desc">RSI ↓</option>
+          <option value="change">Chg%</option>
+          <option value="alpha">A–Z</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="summary-bar"></div>
+
+    <nav id="nav">
+      <button class="nav-btn active" data-view="screener">Screener</button>
+      <button class="nav-btn" data-view="watchlist">Watchlist</button>
+    </nav>
+
+    <main id="view-container">
+      <div id="screener-view">
+        <div id="stock-list"></div>
+      </div>
+      <div id="watchlist-view" class="hidden">
+        <div id="watchlist-list"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Detail bottom sheet -->
+  <div id="sheet-backdrop" class="hidden"></div>
+  <div id="detail-sheet" class="hidden">
+    <div id="sheet-handle-wrap"><div id="sheet-handle"></div></div>
+    <div id="sheet-content"></div>
+  </div>
+
+  <div id="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
